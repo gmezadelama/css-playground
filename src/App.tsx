@@ -1,17 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "./logo.svg";
+import styles from "./App.module.scss";
+import Collapsibles from "./components/collapsible";
 
 const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+    <div className={styles.App}>
+      <header className={styles["App-header"]}>
+        <img src={logo} className={styles["App-logo"]} alt="logo" />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
         <a
-          className="App-link"
+          className={styles["App-link"]}
           href="https://reactjs.org"
           target="_blank"
           rel="noopener noreferrer"
@@ -19,8 +20,11 @@ const App: React.FC = () => {
           Learn React
         </a>
       </header>
+      <div className={styles.content}>
+        <Collapsibles />
+      </div>
     </div>
   );
-}
+};
 
 export default App;
