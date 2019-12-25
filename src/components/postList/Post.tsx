@@ -1,14 +1,10 @@
 import React from "react";
 import classNames from "classnames";
-import { ICollapsibleProps, ICollapsibleState } from "./Collapsible.type";
-import { Post } from "./mockdata";
-import styles from "./Collapsible.module.scss";
+import { IPostProps, IPostState } from "./Post.type";
+import styles from "./Post.module.scss";
 
-export default class Collapsible extends React.Component<
-  ICollapsibleProps,
-  ICollapsibleState
-> {
-  constructor(props: ICollapsibleProps) {
+export default class Post extends React.Component<IPostProps, IPostState> {
+  constructor(props: IPostProps) {
     super(props);
     this.state = {
       collapsed: true
@@ -22,11 +18,11 @@ export default class Collapsible extends React.Component<
   };
 
   public render(): JSX.Element {
-    const { post } = this.props;
+    const { data } = this.props;
     return (
       <div className={styles.postContainer}>
         <div className={styles.title}>
-          <h2>{post.title}</h2>
+          <h2>{data.title}</h2>
         </div>
         <div
           className={classNames(styles.collapsibleSection, {
@@ -35,14 +31,14 @@ export default class Collapsible extends React.Component<
         >
           <div
             className={styles.text}
-            dangerouslySetInnerHTML={{ __html: post.text }}
+            dangerouslySetInnerHTML={{ __html: data.text }}
           />
           <div className={styles.authorSection}>
-            <div className={styles.author}>-{post.author}-</div>
+            <div className={styles.author}>-{data.author}-</div>
           </div>
           <div className={styles.urlSection}>
             <div className={styles.url}>
-              <a target="_blank" href={post.url}>
+              <a target="_blank" href={data.url}>
                 {"Go to original post"}
               </a>
             </div>

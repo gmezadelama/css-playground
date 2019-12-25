@@ -1,4 +1,4 @@
-export interface Post {
+export interface PostInfo {
   title: string;
   text: string;
   url: string;
@@ -19,7 +19,7 @@ Maecenas a tortor ac tellus condimentum elementum. Integer finibus lorem tortor.
 </p>
 `;
 
-export const mockData: Post[] = [
+export const mockData: PostInfo[] = [
   {
     title: "Si enim ita est, vide ne facinus facias, cum mori suadeas.",
     text: `${uniqueText}`,

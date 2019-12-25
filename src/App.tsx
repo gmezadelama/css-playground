@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "./logo.svg";
 import styles from "./App.module.scss";
-import Collapsibles from "./components/collapsible";
+import Collapsibles from "./components/postList";
 
 const App: React.FC = () => {
   return (
