@@ -1,0 +1,38 @@
+.collapsibleSection {
+  max-height: 1000px;
+  -webkit-transition: max-height 0.5s cubic-bezier(0.39, 0.58, 0.57, 1);
+  -moz-transition: max-height 0.5s cubic-bezier(0.39, 0.58, 0.57, 1);
+  -ms-transition: max-height 0.5s cubic-bezier(0.39, 0.58, 0.57, 1);
+  -o-transition: max-height 0.5s cubic-bezier(0.39, 0.58, 0.57, 1);
+  transition: max-height 0.5s cubic-bezier(0.39, 0.58, 0.57, 1);
+  &.collapsed {
+    max-height: 100px;
+    overflow-y: hidden;
+    position: relative;
+    -webkit-transition: max-height 0.5s ease-out;
+    -moz-transition: max-height 0.5s ease-out;
+    -ms-transition: max-height 0.5s ease-out;
+    -o-transition: max-height 0.5s ease-out;
+    transition: max-height 0.5s ease-out;
+  }
+}
+.fadeOut {
+  position: absolute;
+  bottom: 0;
+  height: 50px;
+  width: 100%;
+  background: -webkit-linear-gradient(
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 1)
+  ); /* For Safari */
+  background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+}
+.collapseText {
+  padding: 10px 0;
+  color: #1a1ddd;
+  font-weight: bold;
+  text-decoration: none;
+  &:hover {
+    cursor: pointer;
+  }
+}

@@ -1,5 +1,5 @@
 import React from "react";
-import classNames from "classnames";
+import Collapsible from "./collapsible";
 import { IPostProps, IPostState } from "./Post.type";
 import styles from "./Post.module.scss";
 
@@ -11,12 +11,6 @@ export default class Post extends React.Component<IPostProps, IPostState> {
     };
   }
 
-  private collapse = () => {
-    this.setState({
-      collapsed: !this.state.collapsed
-    });
-  };
-
   public render(): JSX.Element {
     const { data } = this.props;
     return (
@@ -24,11 +18,7 @@ export default class Post extends React.Component<IPostProps, IPostState> {
         <div className={styles.title}>
           <h2>{data.title}</h2>
         </div>
-        <div
-          className={classNames(styles.collapsibleSection, {
-            [styles.collapsed]: this.state.collapsed
-          })}
-        >
+        <Collapsible>
           <div
             className={styles.text}
             dangerouslySetInnerHTML={{ __html: data.text }}
@@ -43,14 +33,7 @@ export default class Post extends React.Component<IPostProps, IPostState> {
               </a>
             </div>
           </div>
-          <div
-            className={classNames({ [styles.fadeOut]: this.state.collapsed })}
-          />
-        </div>
-
-        <div className={styles.collapseText} onClick={this.collapse}>
-          {this.state.collapsed ? "Read more" : "Read less"}
-        </div>
+        </Collapsible>
       </div>
     );
   }
